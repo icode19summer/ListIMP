@@ -21,7 +21,7 @@ public class PolynomialList {
             nextNode = p.getNext();
             //1.判断结点的指数是否相等
             if (node.getExponent() == p.getExponent()) {
-                int sumCoefficient = node.getCoefficient() + p.getCoefficient();
+                double sumCoefficient = node.getCoefficient() + p.getCoefficient();
                 if (sumCoefficient == 0) {
                     prev.setNext(nextNode);
                 } else {
@@ -62,18 +62,17 @@ public class PolynomialList {
                 Node newNode = new Node(q.getCoefficient(), q.getExponent(), p);
                 prev.setNext(newNode);
                 q = q.getNext();
+                p = prev.getNext();
             } else {
-                int sumCoefficient = p.getCoefficient() + q.getCoefficient();
+                double sumCoefficient = p.getCoefficient() + q.getCoefficient();
                 if (sumCoefficient == 0) {
                     prev.setNext(p.getNext());
-                    p = p.getNext();
-                    q = q.getNext();
                 } else {
                     p.setCoefficient(sumCoefficient);
                     prev = p;
-                    p = p.getNext();
-                    q = q.getNext();
                 }
+                p = p.getNext();
+                q = q.getNext();
             }
         }
         if (q != null) {
@@ -93,7 +92,7 @@ public class PolynomialList {
         return this;
     }
 
-    public int xValue(){
+    public double xValue(){
         Node p = head.getNext();
         while (p!=null){
             if (p.getExponent()==1){

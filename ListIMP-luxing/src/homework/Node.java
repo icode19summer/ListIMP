@@ -2,17 +2,17 @@ package homework;
 
 public class Node {
     //系数
-    private int coefficient;
+    private double coefficient;
     private int exponent;
     Node next;
 
-    public Node(int coefficient, int exponent, Node next) {
+    public Node(double coefficient, int exponent, Node next) {
         this.coefficient = coefficient;
         this.exponent = exponent;
         this.next = next;
     }
 
-    public Node(int coefficient, int exponent) {
+    public Node(double coefficient, int exponent) {
         this.coefficient = coefficient;
         this.exponent = exponent;
     }
@@ -20,11 +20,11 @@ public class Node {
     public Node() {
     }
 
-    public int getCoefficient() {
+    public double getCoefficient() {
         return coefficient;
     }
 
-    public void setCoefficient(int coefficient) {
+    public void setCoefficient(double coefficient) {
         this.coefficient = coefficient;
     }
 
